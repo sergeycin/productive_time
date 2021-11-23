@@ -1,16 +1,24 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Dark from './pages/Dark';
 import White from './pages/White';
-import { useTypesSelector } from './store/reducers/themeReducer';
+import { UserActionTypes, useTypesSelector } from './store/reducers/themeReducer';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
-  const theme = useTypesSelector(state => state.theme)
-  console.log(theme);
+  const themen = useTypesSelector(state => state.theme)
+  console.log(themen);
+
+  const whiteHandler = () =>{
+    dispatch({type: UserActionTypes.WHITE_THEME, payload: 1})
+  }
+
+  const darkHendler = () =>{
+    dispatch({type: UserActionTypes.DARK_THEME, payload: 0})
+  }
 
   function currentTheme() {
-    if(theme == 0){
+    if(themen == 0){
   
       return <White />
     
