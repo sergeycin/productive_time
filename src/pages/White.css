@@ -1,6 +1,15 @@
-body{
+.white{
     background: white;
+}
+.white h1{
+    color: black;
 }
 h1{
     color: black;
+}
+.darkhead{
+    font-size: 24px;
+}
+.whiteHead{
+    font-size: 64px;
 }
