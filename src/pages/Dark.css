@@ -1,3 +1,6 @@
+body{
+    background: black;
+}
 .dark{
     background: black;
 }
@@ -8,5 +11,6 @@ h1{
     color: white;
 }
 .darkhead{
+    color: white;
     font-size: 64px;
 }

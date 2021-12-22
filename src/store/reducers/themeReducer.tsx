@@ -21,7 +21,7 @@ interface themeState {
   type ThemeAction = DarkAction | WhiteAction;
   
   const themeColor: themeState = {
-    theme: 0,
+    theme: 1,
   
   }
   /*Хук для использования данных в useSelector */
