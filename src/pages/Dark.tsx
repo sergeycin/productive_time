@@ -29,7 +29,10 @@ const Dark: React.FC = () => {
   <h1 className="darkhead">Dark</h1>
   <button className="whitebtn" onClick={() => whiteHendler()} >Светлая тема</button>
       <button className="darkbtn" onClick={() => darkHandler()}>Темная тема</button>
+
+      <div className="switch-btn switch-on"></div>
     </div>
+    
   );
 }
 
