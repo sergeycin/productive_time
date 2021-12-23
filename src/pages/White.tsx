@@ -11,25 +11,32 @@ const White: React.FC = () => {
   const themewhite = useTypesSelector(state => state.theme)
   console.log(themewhite);
 
-  const darkHandler = () =>{
+ 
+  let flagTheme:boolean = false;
+  let switchClass:string = 'switch-btn';
+const themeHandler = () =>{
+  if (flagTheme === true){
     dispatch({type: UserActionTypes.WHITE_THEME, payload: 1})
     document.body.classList.remove('white');
     document.body.classList.add('dark');
-  }
 
-  const whiteHendler = () =>{
+    flagTheme = false;
+    switchClass = 'switch-btn ';
+    
+  }
+  else{
     dispatch({type: UserActionTypes.DARK_THEME, payload: 0})
     document.body.classList.remove('dark');
     document.body.classList.add('white');
-   
+    flagTheme = true;
+    switchClass = 'switch-btn switch-on';
   }
-
+}
   return (
     <div>
   <h1 className="whiteHead">White</h1>
 
-  <button className="whitebtn" onClick={() => whiteHendler()} >Светлая тема</button>
-      <button className="darkbtn" onClick={() => darkHandler()}>Темная тема</button>
+      <div className={switchClass} onClick={() => themeHandler() }> </div>
     </div>
   );
 }
