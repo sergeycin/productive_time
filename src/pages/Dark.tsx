@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { UserActionTypes, useTypesSelector } from '../store/reducers/themeReducer';
 import personLogo from '../img/person.svg';
+import coin from '../img/coin.svg';
 import './Dark.css'
 
 
@@ -44,15 +45,18 @@ const themeHandler = () =>{
             <div className="header__last-row">
               <div className="header__stat"><p>Статистика</p></div>
               <div className="header__person"><img src={personLogo} alt="" /></div>
+              <div className="header__switch" onClick={() => themeHandler() }>
+                <p>Dark Theme</p>
+    <div className={switchClass} > </div>
+    </div>
+    <div className="header__coin"><img src={coin} alt="" /></div>
             </div>
           </div>
         </div>
       </header>
   <h1 className="darkhead">Dark</h1>
 
-    <div className="switch" onClick={() => themeHandler() }>
-    <div className={switchClass} > </div>
-    </div>
+   
       
     </div>
     

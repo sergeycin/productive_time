@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
 
   function currentTheme() {
-    if(themen == 0){
+    if(themen === 0){
   
       return <White />
     
