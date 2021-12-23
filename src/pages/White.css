@@ -1,15 +1,17 @@
 .white{
     background: white;
-}
-.white h1{
     color: black;
 }
-h1{
-    color: black;
-}
+
+
 .darkhead{
     font-size: 24px;
 }
 .whiteHead{
     font-size: 64px;
+}
+.white .header{
+    background: linear-gradient(270deg, #21E4F2 0%, #313134 100%);
+box-shadow: 0px 4px 4px rgba(33, 232, 247, 0.15);
+color: white;
 }
