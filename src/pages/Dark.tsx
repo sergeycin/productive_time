@@ -4,6 +4,7 @@ import { UserActionTypes, useTypesSelector } from '../store/reducers/themeReduce
 import personLogo from '../img/person.svg';
 import coin from '../img/coin.svg';
 import prewiew from '../img/prewiew.png';
+import burger from '../img/menu2.svg';
 import './Dark.css'
 
 
@@ -36,6 +37,8 @@ const themeHandler = () =>{
   }
 }
 
+
+
   return (
     <div className="wrapperDark">
 
@@ -52,6 +55,7 @@ const themeHandler = () =>{
       <div className={switchClass} > </div>
     </div>
     <div className="header__coin"><img src={coin} alt="" /></div>
+    <div className="header__mobile-menu"><img src={burger} alt="" /></div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 body{
     background: black;
+    overflow: hidden;
 }
 .dark{
     background: black;
@@ -179,4 +180,168 @@ letter-spacing: 0.145em;
 height: 92px;
     background: linear-gradient(90deg, #1BF6FF 0%, #3192E7 84%);
 border-radius: 20px;
+cursor: pointer;
+}
+.header__mobile-menu{
+    display: none;
+}
+@media(max-width:1199px){
+    .header__last{
+        flex-basis: 60%;
+    }
+    .header__mobile-menu{
+        display: block;
+    }
+}
+
+@media(max-width:768px){
+    
+    .header__mobile-menu{
+        display: block;
+    }
+    .header__person{
+        display: none;
+    }
+    .header__stat{
+        display: none;
+    }
+    .header__coin{
+        display: none;
+    }
+    .header__switch{
+        width: 70%;
+    }
+    .header__last{
+        flex-basis: 40%;
+    }
+    .header__mobile-menu img{
+        padding-top: 30%;
+    }
+}
+@media(max-width: 576px){
+    .header__last{
+        flex-basis: 55%;
+    }
+    .container{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .header__head h1{
+        font-size: 14px;
+        padding-top: 10%;
+    }
+    .header{
+        height: 50px;
+    }
+    .header__switch p{
+        font-size: 12px;
+    }
+
+
+    .switch-btn {
+        display: inline-block;
+        cursor: pointer;
+        width: 51px; /* ширина */
+        height: 23px; /* высота */
+        border-radius: 19px; /* радиус скругления */
+        background: #bfbfbf; /* цвет фона */
+        z-index: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        transition-duration: 300ms; /* анимация */
+    }
+    .switch-btn::after {
+        content: "";
+        height: 18px; /* высота кнопки */
+        width: 18px; /* ширина кнопки */
+        border-radius: 17px;
+        background: #fff; /* цвет кнопки */
+        top: 3px; /* положение кнопки по вертикали относительно основы */
+        left: 3px; /* положение кнопки по горизонтали относительно основы */
+        transition-duration: 300ms; /* анимация */
+        position: absolute;
+        z-index: 1;
+    }
+    .switch-on {
+        background: #21E8F7;
+    }
+    .switch-on::after {
+        left: 25px;
+    }
+
+
+
+
+    .ocklock__visual{
+        display: block;
+        margin: 0 auto;
+        margin-top: 2%;
+    }
+    .oclock__circle-gray{
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 301px;
+    height: 301px;
+    
+    background: #231F21;
+    border-radius: 500px;
+    }
+    
+    .oclock__circle-blue{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 301px;
+    height: 301px;
+    
+    background: linear-gradient(270deg, #21E8F7 50%, rgba(33, 232, 247, 0) 60.27%);
+    border-radius: 500px;
+    }
+    .oclock__image{
+        position: absolute;
+        z-index: 2;
+        top: 6%;
+        left: 6%;
+        width: 267px;
+    height: 267px;
+    
+    background: #2C2C2F;
+    border-radius: 500px;
+    }
+    .oclock__image img{
+        z-index: 3;
+        position: absolute;
+        left: 14%;
+        width: 192px;
+        height: 257px;
+    }
+    .choice-btn{
+        width: 33px;
+    height: 33.61px;
+    left: 1108px;
+    top: 660px;
+    border: none;
+    background: #21E8F7;
+    border-radius: 100px;
+    cursor: pointer;
+    }
+
+    .oclock__time h2{
+        font-size: 48px;
+    }
+    .begin-btn{
+        width: 202px;
+height: 62px;
+font-size: 18px;
+    }
+    .ocklock__header p{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        font-size: 14px;
+    }
 }
