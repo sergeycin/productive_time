@@ -37,6 +37,8 @@ const themeHandler = () =>{
   }
 }
 
+let left:number = 60
+let right:number = 0
 
 
   return (
@@ -78,7 +80,7 @@ const themeHandler = () =>{
         </div>
       </div>
 
-    <div className="oclock__time"><h2>60:00</h2></div>
+    <div className="oclock__time"><h2>{left}:0{right}</h2></div>
 
     <div className="oclock__begin"><button className="begin-btn">Начать</button></div>
 
