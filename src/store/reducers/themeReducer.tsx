@@ -1,4 +1,4 @@
-import { TypedUseSelectorHook, useSelector} from 'react-redux';
+
 
 interface themeState {
     theme: number
@@ -24,10 +24,7 @@ interface themeState {
     theme: 1,
   
   }
-  /*Хук для использования данных в useSelector */
-  type RootState = ReturnType<typeof themeReducer>
-  export const useTypesSelector: TypedUseSelectorHook<RootState> = useSelector
-  /*end */
+
   
  export const themeReducer = (state = themeColor,action: ThemeAction ) : themeState => {
    switch (action.type) {

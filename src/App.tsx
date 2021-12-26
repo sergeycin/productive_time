@@ -1,11 +1,13 @@
 import React from 'react';
 import Dark from './pages/Dark';
 import White from './pages/White';
-import {  useTypesSelector } from './store/reducers/themeReducer';
+import { useTypesSelector } from './store';
+
+
 
 const App: React.FC = () => {
 
-  const themen = useTypesSelector(state => state.theme)
+  const themen = useTypesSelector(state => state.theme.theme)
   console.log(themen);
 
 

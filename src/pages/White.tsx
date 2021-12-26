@@ -1,24 +1,25 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { UserActionTypes, useTypesSelector } from '../store/reducers/themeReducer';
+import { UserActionTypes} from '../store/reducers/themeReducer';
 import personLogo from '../img/person.svg';
 import coin from '../img/coin.svg';
 import prewiew from '../img/prewiew.png';
 import burger from '../img/menu2.svg';
 import './White.css'
+import { useTypesSelector } from '../store';
 
 
 
 const White: React.FC = () => {
 
   const dispatch = useDispatch();
-  const themewhite = useTypesSelector(state => state.theme)
+  const themewhite = useTypesSelector(state => state.theme.theme)
   console.log(themewhite);
 
  
   let flagTheme:boolean = false;
   let switchClass:string = 'switch-btn';
-const themeHandler = () =>{
+const themeHandler = ():void  =>{
   if (flagTheme === true){
     dispatch({type: UserActionTypes.WHITE_THEME, payload: 1})
     document.body.classList.remove('white');

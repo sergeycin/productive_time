@@ -1,24 +1,29 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { UserActionTypes, useTypesSelector } from '../store/reducers/themeReducer';
+import { UserActionTypes } from '../store/reducers/themeReducer';
 import personLogo from '../img/person.svg';
 import coin from '../img/coin.svg';
 import prewiew from '../img/prewiew.png';
 import burger from '../img/menu2.svg';
 import './Dark.css'
+import { useTypesSelector } from '../store';
+import { timerAction } from '../asyncActions/timerAction';
+
 
 
 const Dark: React.FC = () => {
-
+  
   const dispatch = useDispatch();
-  const themewhite = useTypesSelector(state => state.theme)
-  console.log(themewhite);
+  // const themewhite = useTypesSelector(state => state.theme.theme)
+  const minutes = useTypesSelector(state => state.timer.minutes)
+  console.log(minutes);
+  
   document.body.classList.add('dark');
 
  
   let flagTheme:boolean = true;
   let switchClass:string = 'switch-btn switch-on';
-const themeHandler = () =>{
+const themeHandler = () :void =>{
   if (flagTheme === true){
     dispatch({type: UserActionTypes.WHITE_THEME, payload: 1})
     document.body.classList.remove('white');
@@ -80,9 +85,9 @@ let right:number = 0
         </div>
       </div>
 
-    <div className="oclock__time"><h2>{left}:0{right}</h2></div>
+    <div className="oclock__time"><h2>{minutes}:0{right}</h2></div>
 
-    <div className="oclock__begin"><button className="begin-btn">Начать</button></div>
+    <div className="oclock__begin"><button onClick={() => dispatch(timerAction())}  className="begin-btn">Начать</button></div>
 
 
       </div>
