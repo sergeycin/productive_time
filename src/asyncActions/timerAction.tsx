@@ -12,10 +12,10 @@ export const timerAction = (minutes:number,seconds:number) => {
     let countFlag:number = 60
     console.log('time',seconds)
     return async function(dispatch:Dispatch<TimerAction>){
-        let  timerMinutes  = setInterval(() => dispatch(timerActionMinutes(n)), 60000);
-        let timerSeconds = setInterval(() => {
+        let  timerMinutes  =  setInterval(() => dispatch(timerActionMinutes(n)), 60000);
+         let  timerSeconds = setInterval(() => {
             if(countFlag <=0){
-                dispatch(timerActionSeconds(-60))
+               dispatch(timerActionSeconds(-60))
                 countFlag = 60;
             }
             else{
@@ -27,7 +27,7 @@ export const timerAction = (minutes:number,seconds:number) => {
        
 
 
-        setTimeout(() => { clearInterval(timerMinutes); alert('stop'); }, minutesMS);
+        setTimeout(() => {  clearInterval(timerMinutes); alert('stop'); }, minutesMS);
         setTimeout(() => { clearInterval(timerSeconds); alert('stop'); }, minutesMS);
     }
    

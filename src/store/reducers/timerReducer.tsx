@@ -22,7 +22,7 @@ interface timerState {
 export type TimerAction = MinutesAction| SecondsAction;
   
   const timerCount: timerState = {
-    minutes: 2,
+    minutes: 1,
     seconds: 60
   
   }
