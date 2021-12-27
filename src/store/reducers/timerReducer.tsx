@@ -22,8 +22,8 @@ interface timerState {
 export type TimerAction = MinutesAction| SecondsAction;
   
   const timerCount: timerState = {
-    minutes: 60,
-    seconds: 0
+    minutes: 2,
+    seconds: 60
   
   }
 
@@ -41,3 +41,4 @@ export type TimerAction = MinutesAction| SecondsAction;
   }
 
   export const timerActionMinutes = (payload:number) => ({type: timerActionTypes.MINUTES, payload})
+  export const timerActionSeconds = (payload:number) => ({type: timerActionTypes.SECONDS, payload})

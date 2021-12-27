@@ -16,8 +16,9 @@ const Dark: React.FC = () => {
   const dispatch = useDispatch();
   // const themewhite = useTypesSelector(state => state.theme.theme)
   const minutes = useTypesSelector(state => state.timer.minutes)
+  const seconds = useTypesSelector(state => state.timer.seconds)
   console.log(minutes);
-  
+  console.log(seconds)
   document.body.classList.add('dark');
 
  
@@ -42,7 +43,7 @@ const themeHandler = () :void =>{
   }
 }
 
-let left:number = 60
+// let left:number = 60
 let right:number = 0
 
 
@@ -85,9 +86,9 @@ let right:number = 0
         </div>
       </div>
 
-    <div className="oclock__time"><h2>{minutes}:0{right}</h2></div>
+    <div className="oclock__time"><h2>{minutes}:{seconds}</h2></div>
 
-    <div className="oclock__begin"><button onClick={() => dispatch(timerAction())}  className="begin-btn">Начать</button></div>
+    <div className="oclock__begin"><button onClick={() => dispatch(timerAction(minutes,seconds))}  className="begin-btn">Начать</button></div>
 
 
       </div>
