@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { UserActionTypes } from '../store/reducers/themeReducer';
 import personLogo from '../img/person.svg';
@@ -8,7 +8,6 @@ import burger from '../img/menu2.svg';
 import './Dark.css'
 import { useTypesSelector } from '../store';
 import { timerAction } from '../asyncActions/timerAction';
-
 
 
 
@@ -46,18 +45,6 @@ const themeHandler = () :void =>{
 
 // let left:number = 60
 let right:number = 0
-
-
-//circle range
-
-
-
-
-
-
-
-
-
 
 
   return (
@@ -109,12 +96,9 @@ let right:number = 0
     </div>
   </main>
 
-
-    
+   
+      
     </div>
-
-
-
     
   );
 }
