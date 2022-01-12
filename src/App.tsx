@@ -22,7 +22,7 @@ const App: React.FC = () => {
      
   
       return <Dark />
-    }
+    } 
   }
 
   return (

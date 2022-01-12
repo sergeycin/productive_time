@@ -1,6 +1,6 @@
 body{
     background: black;
-    overflow: hidden;
+
 }
 .dark{
     background: black;
@@ -345,3 +345,18 @@ font-size: 18px;
         font-size: 14px;
     }
 }
+
+
+
+.range-block{
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    
+}
+.range-block input{
+    display: block ;
+    margin: 0 auto;
+}
+
+/*  Range */

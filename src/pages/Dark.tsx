@@ -21,7 +21,8 @@ const Dark: React.FC = () => {
   console.log(seconds)
   document.body.classList.add('dark');
 
- 
+  // const ref = React.useRef<HTMLDivElement | null>(null)
+
   let flagTheme:boolean = true;
   let switchClass:string = 'switch-btn switch-on';
 const themeHandler = () :void =>{
@@ -45,6 +46,12 @@ const themeHandler = () :void =>{
 
 // let left:number = 60
 let right:number = 0
+
+// function handleChange(event) {
+//   this.setState({value: event.target.value});
+// }
+
+
 
 
   return (
@@ -85,7 +92,18 @@ let right:number = 0
           </div>
         </div>
       </div>
+      <div className="range-block">
+  
+      {/* <input 
+      id="typeinp" 
+      type="range" 
+      min="0" max="5" 
+      value={this.state.value} 
+      onChange={this.handleChange}
+      step="1"/> */}
 
+      </div>
+      
     <div className="oclock__time"><h2>{minutes}:{seconds}</h2></div>
 
     <div className="oclock__begin"><button onClick={() => dispatch(timerAction(minutes,seconds))}  className="begin-btn">Начать</button></div>
@@ -96,8 +114,8 @@ let right:number = 0
     </div>
   </main>
 
-   
-      
+  
+    
     </div>
     
   );
