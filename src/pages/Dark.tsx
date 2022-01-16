@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { UserActionTypes } from '../store/reducers/themeReducer';
 import personLogo from '../img/person.svg';
@@ -8,19 +8,33 @@ import burger from '../img/menu2.svg';
 import './Dark.css'
 import { useTypesSelector } from '../store';
 import { timerAction } from '../asyncActions/timerAction';
+import { timerActionDefault } from '../store/reducers/timerReducer';
 
 
 
 const Dark: React.FC = () => {
   
+  /*Range state */
+  
+  let [firstValue ,setfirstValue] = useState(0)
+  const [minValue,setminValue] = useState(1)
+  
+  const [maxValue,setmaxValue] = useState(120)
+  const step = 1;
+  const handleChange = (event:any) =>{
+    let value = event.target.value
+    setfirstValue(firstValue = value )  
+    dispatch(timerActionDefault(firstValue))
+  }
+  
   const dispatch = useDispatch();
   // const themewhite = useTypesSelector(state => state.theme.theme)
   const minutes = useTypesSelector(state => state.timer.minutes)
   const seconds = useTypesSelector(state => state.timer.seconds)
-  console.log(minutes);
-  console.log(seconds)
+  // console.log(minutes);
+  // console.log(seconds)
   document.body.classList.add('dark');
-
+  
   // const ref = React.useRef<HTMLDivElement | null>(null)
 
   let flagTheme:boolean = true;
@@ -94,6 +108,9 @@ let right:number = 0
       </div>
       <div className="range-block">
   
+                <input type="range" value={firstValue} min={minValue} max={maxValue} step={step} onChange={handleChange}/>
+
+
       {/* <input 
       id="typeinp" 
       type="range" 

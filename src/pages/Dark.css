@@ -159,6 +159,7 @@ border: none;
 background: #21E8F7;
 border-radius: 100px;
 cursor: pointer;
+display: none;
 }
 .oclock__time h2{
     font-weight: bold;
@@ -321,6 +322,7 @@ cursor: pointer;
         height: 257px;
     }
     .choice-btn{
+        display: block;
         width: 33px;
     height: 33.61px;
     left: 1108px;
@@ -360,3 +362,93 @@ font-size: 18px;
 }
 
 /*  Range */
+input[type=range] {
+    height: 34px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 100%;
+    background: none;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    /* box-shadow: 1px 1px 1px #3192E7; */
+    background: #21E8F7;
+    border-radius: 5px;
+    border: 0px solid #3192E7;
+  }
+  input[type=range]::-webkit-slider-thumb {
+  
+    border: 2px solid #21E8F7;
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: #231F21;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6.5px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #21E8F7;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+
+    background: #21E8F7;
+    border-radius: 5px;
+    border: 0px solid #3192E7;
+  }
+  input[type=range]::-moz-range-thumb {
+  
+    border: 2px solid #21E8F7;
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: #231F21;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #21E8F7;
+    border: 0px solid #3192E7;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #3192E7;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #21E8F7;
+    border: 0px solid #3192E7;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #3192E7;
+  }
+  input[type=range]::-ms-thumb {
+    margin-top: 1px;
+ 
+    border: 2px solid #21E8F7;
+    height: 23px;
+    width: 23px;
+    border-radius: 23px;
+    background: #231F21;
+    cursor: pointer;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #21E8F7;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #21E8F7;
+  }

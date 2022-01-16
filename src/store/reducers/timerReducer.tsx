@@ -7,6 +7,7 @@ interface timerState {
   export enum timerActionTypes{
     MINUTES = 'MINUTES',
     SECONDS = 'SECONDS',
+    DEFAULT = 'DEFAULT',
   
   }
   interface MinutesAction {
@@ -18,12 +19,16 @@ interface timerState {
     payload: number
   
   }
+  interface DefaultAction{
+    type:  timerActionTypes.DEFAULT,    
+    payload: number
   
-export type TimerAction = MinutesAction| SecondsAction;
+  }
+export type TimerAction = MinutesAction| DefaultAction | SecondsAction ; 
   
   const timerCount: timerState = {
     minutes: 1,
-    seconds: 60
+    seconds: 0
   
   }
 
@@ -33,6 +38,8 @@ export type TimerAction = MinutesAction| SecondsAction;
   return {...state, minutes: state.minutes - action.payload}
         case timerActionTypes.SECONDS:
   return {...state, seconds: state.seconds - action.payload}
+  case timerActionTypes.DEFAULT:
+    return {...state, minutes: state.minutes = action.payload}
      default:
      return state
   
@@ -42,3 +49,4 @@ export type TimerAction = MinutesAction| SecondsAction;
 
   export const timerActionMinutes = (payload:number) => ({type: timerActionTypes.MINUTES, payload})
   export const timerActionSeconds = (payload:number) => ({type: timerActionTypes.SECONDS, payload})
+  export const timerActionDefault = (payload:number) => ({type: timerActionTypes.DEFAULT, payload})
