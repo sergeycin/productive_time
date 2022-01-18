@@ -120,13 +120,7 @@ const nameField = React.useRef(null);
                 <input type="range" value={firstValue} min={minValue} max={maxValue} step={step} onChange={handleChange}/>
 
 
-      {/* <input 
-      id="typeinp" 
-      type="range" 
-      min="0" max="5" 
-      value={this.state.value} 
-      onChange={this.handleChange}
-      step="1"/> */}
+  
 
       </div>
       

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { UserActionTypes} from '../store/reducers/themeReducer';
 import personLogo from '../img/person.svg';
@@ -7,12 +7,33 @@ import prewiew from '../img/prewiew.png';
 import burger from '../img/menu2.svg';
 import './White.css'
 import { useTypesSelector } from '../store';
+import { timerActionDefault } from '../store/reducers/timerReducer';
+import { timerAction } from '../asyncActions/timerAction';
 
 
 
 const White: React.FC = () => {
 
+
+
+  
   const dispatch = useDispatch();
+  let [firstValue ,setfirstValue] = useState(0)
+  const [minValue,setminValue] = useState(1 )
+  
+  const [maxValue,setmaxValue] = useState(120)
+  const step = 1;
+  const handleChange = (event:any) =>{
+    let value = event.target.value
+    setfirstValue(firstValue = value )  
+    dispatch(timerActionDefault(firstValue))
+  }
+  
+  // const themewhite = useTypesSelector(state => state.theme.theme)
+  const minutes = useTypesSelector(state => state.timer.minutes)
+  const seconds = useTypesSelector(state => state.timer.seconds)
+
+
   const themewhite = useTypesSelector(state => state.theme.theme)
   console.log(themewhite);
 
@@ -76,10 +97,17 @@ const themeHandler = ():void  =>{
           </div>
         </div>
       </div>
+      <div className="range-block">
+  
+  <input type="range" value={firstValue} min={minValue} max={maxValue} step={step} onChange={handleChange}/>
 
-    <div className="oclock__time"><h2>60:00</h2></div>
 
-    <div className="oclock__begin"><button className="begin-btn">Начать</button></div>
+
+
+</div>
+<div className="oclock__time"><h2>{minutes}:{seconds}</h2></div>
+
+<div className="oclock__begin"><button onClick={() => dispatch(timerAction(minutes,seconds))}  className="begin-btn">Начать</button></div>
 
 
       </div>
