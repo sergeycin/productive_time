@@ -5,19 +5,27 @@ import personLogo from '../img/person.svg';
 import coin from '../img/coin.svg';
 import prewiew from '../img/prewiew.png';
 import burger from '../img/menu2.svg';
+import music from '../img/music.mp3';
 import './Dark.css'
+
 import { useTypesSelector } from '../store';
 import { timerAction } from '../asyncActions/timerAction';
 import { timerActionDefault } from '../store/reducers/timerReducer';
 
 
+export  const soundClick = () => {
+  let audio = document.querySelector('audio')
+  audio?.play()
+  setTimeout(() => {audio?.pause(); }, 15000);
+  // nameField.autoplay = true; // Автоматически запускаем
+}
 
 const Dark: React.FC = () => {
-  
+ 
   /*Range state */
   
   let [firstValue ,setfirstValue] = useState(0)
-  const [minValue,setminValue] = useState(1)
+  const [minValue,setminValue] = useState(1 )
   
   const [maxValue,setmaxValue] = useState(120)
   const step = 1;
@@ -65,6 +73,7 @@ let right:number = 0
 //   this.setState({value: event.target.value});
 // }
 
+const nameField = React.useRef(null);
 
 
 
@@ -130,9 +139,12 @@ let right:number = 0
       
     </div>
   </main>
+  {/* <div className="begin-btn" onClick={soundClick}>Музыка</div> */}
+  <audio >
+         <source src={music} type="audio/mpeg"/>
+     </audio>
+     
 
-  
-    
     </div>
     
   );

@@ -1,4 +1,5 @@
 import { Dispatch } from "redux"
+import { soundClick } from "../pages/Dark"
 
 import { TimerAction, timerActionMinutes, timerActionSeconds } from "../store/reducers/timerReducer"
 
@@ -30,8 +31,8 @@ export const timerAction = (minutes:number,seconds:number) => {
        
         let  timerMinutes  =  setInterval(() => dispatch(timerActionMinutes(n)), 60000);
 
-        setTimeout(() => {  clearInterval(timerMinutes); dispatch(timerActionMinutes(-1)) }, minutesMS);
-        setTimeout(() => { clearInterval(timerSeconds); dispatch(timerActionSeconds(1))}, minutesMS);
+        setTimeout(() => {  clearInterval(timerMinutes); dispatch(timerActionMinutes(-1)); soundClick() }, minutesMS);
+        setTimeout(() => { clearInterval(timerSeconds); dispatch(timerActionSeconds(1)); soundClick()}, minutesMS);
     }
    
 }
