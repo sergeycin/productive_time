@@ -13,15 +13,11 @@ import { timerAction } from '../asyncActions/timerAction';
 import { timerActionDefault } from '../store/reducers/timerReducer';
 
 
-export  const soundClick = () => {
-  let audio = document.querySelector('audio')
-  audio?.play()
-  setTimeout(() => {audio?.pause(); }, 15000);
-  // nameField.autoplay = true; // Автоматически запускаем
-}
+
+
 
 const Dark: React.FC = () => {
- 
+  
   /*Range state */
   
   let [firstValue ,setfirstValue] = useState(0)
@@ -33,12 +29,15 @@ const Dark: React.FC = () => {
     let value = event.target.value
     setfirstValue(firstValue = value )  
     dispatch(timerActionDefault(firstValue))
+
   }
   
   const dispatch = useDispatch();
   // const themewhite = useTypesSelector(state => state.theme.theme)
   const minutes = useTypesSelector(state => state.timer.minutes)
   const seconds = useTypesSelector(state => state.timer.seconds)
+  const Sum = useTypesSelector(state => state.timer.sumMinutes)
+  
   // console.log(minutes);
   // console.log(seconds)
   document.body.classList.add('dark');
@@ -104,7 +103,7 @@ const nameField = React.useRef(null);
   <main className="main">
     <div className="oclock">
       <div className="container">
-      <div className="ocklock__header"><p>Вы были сконцентрированы 180 мин</p></div>
+      <div className="ocklock__header"><p>Вы были сконцентрированы {Sum} мин</p></div>
       <div className="ocklock__visual">
         <div className="oclock__circle-gray">
           <div className="oclock__circle-blue">

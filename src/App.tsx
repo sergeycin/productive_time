@@ -8,7 +8,7 @@ import { useTypesSelector } from './store';
 const App: React.FC = () => {
 
   const themen = useTypesSelector(state => state.theme.theme)
-  console.log(themen);
+  // console.log(themen);
 
 
 
